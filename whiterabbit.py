@@ -44,7 +44,8 @@ print(f'Create FIFO pipe...')
 # create fifo pipe
 try:
 	os.mkfifo(FIFO_PATH, 0o666)
-except OSError:
+except OSError as e:
+	print(f'FIFO error: {e}')
 	pass
 
 fifo=open(FIFO_PATH, "r")
