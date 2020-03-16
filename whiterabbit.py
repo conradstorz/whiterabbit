@@ -27,7 +27,7 @@ COLOR_PURPLE = (1,0,1)
 COLOR_YELLOW = (1,1,0)
 COLOR_WHITE = (1,1,1)
 
-print(f'Detect terminal or neopixel')
+print(f'Detect terminal or neopixel {socket.gethostname()}')
 # set display wrapper to either terminal or neopixel based on hostname
 if socket.gethostname() == RPI_HOSTNAME:
 	from neopixelwrapper import *
@@ -87,6 +87,7 @@ while True:
 		if line.strip() != "":
 			mb.scroll_string(line[:256], COLOR_GREEN)
 			time.sleep(1)
+		sys.exit(1)
 
 	except KeyboardInterrupt:
 		mb.clear()
