@@ -27,6 +27,10 @@ COLOR_PURPLE = (1,0,1)
 COLOR_YELLOW = (1,1,0)
 COLOR_WHITE = (1,1,1)
 
+from neopixelwrapper import *
+display_wrapper = NeopixelWrapper()
+
+"""
 print(f'Detect terminal or neopixel {socket.gethostname()}')
 # set display wrapper to either terminal or neopixel based on hostname
 if socket.gethostname() == RPI_HOSTNAME:
@@ -35,6 +39,7 @@ if socket.gethostname() == RPI_HOSTNAME:
 else:
 	from terminalwrapper import *
 	display_wrapper = TerminalWrapper()
+"""
 
 font = BDFFont("fonts/5x5.bdf")
 mb = MatrixBuffer(MATRIX_ROWS, MATRIX_COLS, font, display_wrapper)
