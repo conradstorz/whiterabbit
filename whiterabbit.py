@@ -48,7 +48,7 @@ except OSError as e:
 	print(f'FIFO error: {e}')
 	pass
 
-fifo=open(FIFO_PATH, "r")
+#fifo=open(FIFO_PATH, "r")
 
 print(f'FIFO is open.')
 # capture kill signal
@@ -83,7 +83,7 @@ while True:
 		# check if there are any messages in queue
 		# scroll if found
 		print(f'check FIFO and display any text...')
-		line = fifo.readline()
+		#line = fifo.readline()
 		if line.strip() != "":
 			mb.scroll_string(line[:256], COLOR_GREEN)
 			time.sleep(1)
