@@ -95,6 +95,3 @@ while True:
 		fifo.close()
 		break
 	
-	except:
-		pass
-
